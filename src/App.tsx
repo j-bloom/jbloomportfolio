@@ -3,104 +3,49 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import Technologies from './components/Technologies';
+import About from './components/About';
 
 function App() {
   return (
     <BrowserRouter>
-      <HashLink smooth to='#first'>
-        First Header
-      </HashLink>
-      <HashLink smooth to='#second'>
-        Second Header
-      </HashLink>
-      <HashLink smooth to='#three'>
-        Third Header
-      </HashLink>
-      <HashLink smooth to='#five'>
-        Fifth Header
-      </HashLink>
+      <div className='nav__menu'>
+        <HashLink smooth to='#intro' className='nav__btn'>
+          Welcome
+        </HashLink>
+        <HashLink smooth to='#technology' className='nav__btn'>
+          Technologies I use
+        </HashLink>
+        <HashLink smooth to='#about' className='nav__btn'>
+          About Me
+        </HashLink>
+        <HashLink smooth to='#footer' className='nav__btn'>
+          Contact Me
+        </HashLink>
+      </div>
       <div className="App">
 
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            id='first'
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React -First
-          </a>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            id='second'
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React - Second
-          </a>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            id='three'
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React - Three
-          </a>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            id='four'
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React -Four
-          </a>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            id='five'
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React - Five
-          </a>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            id='six'
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React - Six
-          </a>
-        </header>
+        {/* Introduction section */}
+        <section className="intro" id="intro">
+          <Home />
+        </section>
+
+        {/* My Technologies Section */}
+        <section className="my-technologies" id="technology">
+          <Technologies />
+        </section>
+
+        {/* About Me Section */}
+        <section className='about' id='about'>
+          <About />
+        </section>
+
+        {/* Footer Section */}
+        <footer className="footer" id='footer'>
+          <Footer />
+        </footer>
       </div>
     </BrowserRouter>
   );
